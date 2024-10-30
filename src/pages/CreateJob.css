@@ -1,0 +1,12 @@
+.Createjob-content { background-color: white ; display: flex;flex-direction: column; gap: 40px; margin: 20px; border-radius: 10px; padding: 50px 20px; }
+.Car-information table {width: 100%; }
+.Car-information table td {padding: 5px 5px;}
+.Car-information { display: flex; flex-direction: column; gap: 20px; }
+.Car-information h2 {font-size: 32px; font-weight: 600;}
+.Confirmbtn { padding: 15px 40px; border: none; width: 180px;  border-radius: 12px; background-color: #D4DFE7; }
+
+
+
+.Person-in-collection table {width: 100%; }
+.Person-in-collection { display: flex; flex-direction: column; gap: 20px;}
+.Person-in-collection table td {padding: 5px 5px;}

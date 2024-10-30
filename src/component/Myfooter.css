@@ -1,0 +1,71 @@
+ .SocailMediaIcons ul {
+    display: flex; list-style-type: none; gap: 25px;
+}
+.SocailMediaIcons ul li {
+    font-size: 40px; 
+}
+.SocailMediaIcons ul li a {color: black;}
+.FooterContainer{ position: relative; z-index: -1; top: 200px;
+    text-align: center; border: 2px solid #D4DFE7; background-color: #D4DFE7; ;
+}
+
+.FooterUpper {
+    background-color: #27374D;
+            height: 400px;
+            margin-left: 40px;
+            margin-right:  40px;
+            margin-top:-200px;
+}
+.Footer { padding-left:  85px; padding-right: 85px; padding-top: 230px; border:none; display: flex; padding-bottom: 20px; position: relative ;  height: auto; margin-top: -200px;   justify-content: space-between; align-items: center; }
+.logo img {width: 145px; height: 54px;}
+
+.FooterMenu ul{  list-style-type: none; display: flex; gap: 20px; position: relative;   }
+.FooterMenu ul li{  margin:5px; padding:5px;  padding-top: 10px; padding-bottom: 10px;}
+.FooterMenu ul li a { text-decoration: none; color: black; padding: 10px 0px; }
+
+.FooterContent {  width: 600px; margin: auto; padding-top: 55px; position: relative; }
+.FooterContent ul { display: flex; flex-direction: column; gap: 30px; list-style-type: none;}
+.FooterContent ul li h3 { font-size: 54px; color: white;}
+.FooterContent ul li p {margin: auto; text-align: center; width: 400px; font-size: 19px; color: white;}
+.ContactUsButton { border: none; padding: 15px 120px; background-color:#D4DFE7; border-radius: 16px; font-weight:700;}
+
+
+
+
+
+@media (max-width: 1200px) {
+   .Footer{ padding-left: 40px; padding-right: 40px;}
+   
+}
+
+
+@media (max-width: 992px) {
+  .Footer {   padding-left:  20px; padding-right: 20px; }
+  .FooterUpper {margin-left: 20px; margin-right: 20px;}
+
+}
+@media (max-width: 768px) {
+    .FooterMenu ul {display: flex; flex-direction: column; }
+    .SocialMedia {gap: 15px;}
+    .SocailMediaIcons ul {gap: 15px;}
+    .SocailMediaIcons ul li { font-size: 30px;}
+    .copyright p {font-size: 12px;}
+    .FooterContent{width: 450px;}
+    .FooterContent ul li p { width: 300px; font-size: 16px;}
+    .FooterContent ul li h3{ font-size: 36px;}
+    .ContactUsButton {padding: 13px 80px;}
+  }
+
+
+
+
+@media (max-width: 468px) {
+    .Footer{display: flex; flex-direction: column; row-gap: 30px; padding-left: 10px; padding-right: 10px;}
+    .FooterMenu ul li:hover {border-bottom: 2px solid black;}
+.FooterContent {width: 300px; }
+    .FooterContent ul li p { width: 200px; font-size: 16px;}
+    .FooterContent ul li h3{ font-size: 42px;}
+    .ContactUsButton{ padding: 11px 60px;}
+    .FooterUpper {margin-left: 10px; margin-right: 10px;}
+}
+

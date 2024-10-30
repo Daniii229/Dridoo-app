@@ -1,0 +1,31 @@
+.Jobheadmenu {
+   display: flex; justify-content: center; align-items: center; gap: 5px;
+}
+.Jobheader {
+ display: flex; justify-content: space-between; flex-wrap: wrap; row-gap: 20px;
+}
+
+.Jobheader h2 {
+    font-size: 34px;
+}
+.filterbtn { 
+    padding: 6px 18px ; font-size: 22px; border-radius: 14px; color: white; background-color: #27374D;
+}
+
+
+@media (max-width: 992px) {
+    .Jobheader h2 {
+        font-size: 22px;
+    }
+   .Jobheadmenu h3 {
+    font-size: 20px;
+   }
+   .Jobheadmenu input {
+    width: 100px;
+    height: 30px;
+   }
+   .filterbtn {
+     padding: 4px 8px; font-size: 16px; border-radius: 12px;
+   }
+
+}

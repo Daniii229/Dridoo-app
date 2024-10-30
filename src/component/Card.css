@@ -1,0 +1,22 @@
+.card {
+    padding: 30px;
+    background-color: rgb(238, 198, 183);
+    width: 330px;
+    height: 220px ;
+    border-radius: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.card ul {
+    list-style-type: none; 
+}
+
+.card ul li h2 {
+    font-size: 20px;
+}
+.card ul li p {
+    margin: 25px 0px;
+}
+
+.card ul button{
+    padding: 12px 40px;  background-color: #27374D; color: white;border: none; border-radius: 25px; cursor: pointer; }

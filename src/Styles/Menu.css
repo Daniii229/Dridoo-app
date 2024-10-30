@@ -1,0 +1,274 @@
+
+/*This is Row 1 Styling*/
+.Row1 { display: flex;}
+.Row1right {width: 50%;}
+.Row1left ul { width: 500px;  list-style-type: none;}
+.Row1left {padding-left: 85px; padding-top: 80px; width: 50%;}
+.Row1right img {width: 100%; height: 600px;}
+.Row1left ul li p {font-size: 20px; line-height: 24px; font-weight: 400; margin-top: 40px;margin-bottom: 40px;}
+.Row1left ul li h2 {font-size: 54px; font-weight: 700; color: black;}
+.BusinessSolutionButton { margin-right: 20px; border: none; width: 240px; padding: 15px 30px; background-color:#27374D    ; color: white; border-radius: 16px; font-weight:700;}
+.DriveWithUsButton { border: none; width: 240px;  padding: 15px 30px; background-color:#D4DFE7; border-radius: 16px; font-weight:700;}
+
+/*This is Row 2 Styling*/
+.Row2 {height: 500px; padding: 80px 0px; margin-top: 20px; }
+.Row2Background{ height:300px;background-color: #D4DFE7; }
+.Row2Box{ position: relative; top: -25px; rotate: 45deg; margin: auto; border-radius: 36px;  width: 350px; height: 350px; text-align: center; background-color: #27374D;}
+
+
+/*This is Row 3 Styling*/
+.Row3 {height: auto; padding: 10px 85px; margin-bottom: 40px; }
+.Row3Col {display: flex; margin-top: 40px;}
+.Row3left { width: 33%;}
+.Row3leftup { height: 330px; margin-bottom: 40px;}
+.Row3leftup ul {list-style-type: none; text-align: end; }
+.Row3leftup ul li { margin-bottom: 10px;}
+.Row3leftup ul li img{background-color:#D4DFE7 ; width: 100px; height: 100px; text-align: end; padding: 30px; }
+
+.Row3leftdown {height: 330px;}
+.Row3leftdown ul {list-style-type: none; text-align: end; }
+.Row3leftdown ul li { margin-bottom: 10px;}
+.Row3leftdown ul li img{background-color:#D4DFE7 ; width: 100px; height: 100px; text-align: end; padding: 30px; }
+
+.Row3center { width: 33%;}
+.Row3center img {  width: 100%; height: 480px;}
+
+.Row3right { width: 33%;}
+.Row3rightup { height: 330px; margin-bottom: 40px;}
+.Row3rightup ul {list-style-type: none; text-align: start; }
+.Row3rightup ul li { margin-bottom: 10px;}
+.Row3rightup ul li img{background-color:#D4DFE7 ; width: 100px; height: 100px; text-align: start; padding: 30px; }
+
+.Row3rightdown {height: 330px;}
+.Row3rightdown ul {list-style-type: none; text-align: start; }
+.Row3rightdown ul li { margin-bottom: 10px;}
+.Row3rightdown ul li img{background-color:#D4DFE7 ; width: 100px; height: 100px; text-align: start; padding: 30px; }
+
+       /*This is Row 4 Styling*/
+.Row4 {display: flex; margin-left: 40px; margin-right: 40px; background-color: #27374D;}
+.Row4right {width: 40%;}
+.Row4right img { height: 500px; width: 100%;}
+.Row4left {width: 60%; padding: 50px;}
+/* .Row4leftcontent {width: 100%; padding: 50px;} */
+.Row4left h3 {font-size: 36px; font-weight: 700; color: white; line-height: 44px;}
+.Row4left h2 {font-size: 250px; line-height: 0.5; font-weight:700; color: grey; margin-top: 20px; }
+.Row4left p { font-weight: 400; color: white; font-size: 22px; text-align: end; margin-top: 50px;}
+
+    /* This is Row 5 styling*/
+
+.Row5 {margin: 40px 85px;}
+.Row5 h3 {font-size: 44px; font-weight: 700; text-align: center;}
+.Row5Coloumns { display: flex; }
+.Row5left{width: 50%; display: flex; text-align: center;}
+.Row5right{width: 50%;display: flex;text-align: center;}
+
+.Row5Col-1{width: 50%; padding: 20px;}
+.Row5Col-1 img {width: 280px; height: 280px; }
+.Row5Col-1 h4 { font-size: 22px; font-weight: 700; text-align: center; color: black;}
+.Row5Col-1 p {font-size: 19px; font-weight: 400; line-height: 23px; text-align: center; color: black;}
+
+.Row5Col-2 {width: 50%;  padding: 20px;}
+.Row5Col-2 img {width: 280px; height: 280px; text-align: center;}
+.Row5Col-2 h4 { font-size: 22px; font-weight: 700; color: black; text-align: center;}
+.Row5Col-2 p {font-size: 19px; font-weight: 400; line-height: 23px; text-align: center; color: black;}
+
+.Row5Col-3{width: 50%;  padding: 20px;}
+.Row5Col-3 img {width: 280px; height: 280px; text-align: center;}
+.Row5Col-3 h4 { font-size: 22px; font-weight: 700; text-align: center; color: black;}
+.Row5Col-3 p {font-size: 19px; font-weight: 400; line-height: 23px; text-align: center; color: black;}
+
+.Row5Col-4 {width: 50%;  padding: 20px;}
+.Row5Col-4 img {width: 280px; height: 280px;}
+.Row5Col-4 h4 { font-size: 22px; font-weight: 700; text-align: center; color: black;}
+.Row5Col-4 p {font-size: 19px; font-weight: 400; line-height: 23px; text-align: center; color: black;}
+
+   
+
+/*This is Row 6 Styling*/
+.Row6 {display: flex; padding: 40px 85px; background-color: #27374D;}
+.Row6right {width: 50%;}
+.Row6right img { height: 500px; width: 100%;}
+.Row6left {width: 50%; }
+/* .Row4leftcontent {width: 100%; padding: 50px;} */
+.Row6left h3 { margin-top: 50px; font-size: 54px; font-weight: 700; color: white; line-height: 66px;}
+.Row6left p { font-weight: 400; color: white; line-height: 26px; font-size: 22px; margin-top: 20px;}
+.JustaClick {color:#F4AF00;}
+
+/* This is Row 7 Styling*/
+.Row7 {display: flex; }
+.Row7right {display: flex ; flex-direction: column; gap: 20px; justify-content: center ;  width: 50%;}
+.Row7left img { height: 500px; width: 100%;}
+.Row7left {width: 50%; padding: 50px;}
+.Row7right h2 { font-size: 22px; font-weight: 700; letter-spacing: 10px;}
+.Row7right h3 { font-size: 36px; font-weight: 700; line-height: 44px;}
+.Row7right p {margin-top: 5px;}
+
+
+
+
+@media (max-width: 1200px) {
+
+    /*This is Row 1 Styling*/
+    .Row1left ul {width: 450px;}
+    .BusinessSolutionButton{width: 210px;}
+    .DriveWithUsButton{width: 210px;}
+    .Row1left {padding-left: 40px;}
+    .Row1right img {height: 500px;}
+    .Row1left ul li p {margin-top: 25px; margin-bottom: 25px;}
+    .Row1left ul li h2{font-size: 44px;}
+
+    /*This is Row 2 Styling*/
+   .Row2 {height: 450px;}
+   .Row2Background {height: 250px;}
+   .Row2Box {width: 300px; height: 300px;}
+
+    /*This is Row 3 Styling*/
+   .Row3 {padding: 10px 40px;}
+
+   /* This is Row 5 styling*/
+   .Row5 {margin: 40px 40px;}
+   .Row5Coloumns{display: block;}
+   .Row5left{width: 100%;}
+   .Row5right{width: 100%;}
+
+    /* This is Row 6 Styling*/
+    .Row6 {padding: 40px 80px;}
+
+        /* This is Row 7 Styling*/
+    .Row7left img {height: 400px;}
+
+
+
+}
+@media (max-width: 992px) {
+    /*This is Row 1 Styling*/
+  .Row1{display: flex; flex-direction: column;}
+  .Row1right {width: 100%;}
+  .Row1left ul {width: 100%; padding-left: 50px; padding-right: 50px;}
+  .Row1left {padding: 50px 20px;  width: 100%;}
+  .Row1right img {height: 600px;}
+  .Row1left ul li p {margin-top: 30px; margin-bottom: 30px; text-align: justify;}
+  .Row1left ul li h2{font-size: 64px;}
+
+  /*This is Row 3 Styling*/
+  .Row3 {padding: 10px 20px;}
+  .Row3Col {display: flex; flex-direction: column;}
+  .Row3right { width: 100%; display: flex; gap: 40px; text-align: center;}
+  .Row3center{ width: 100%; }
+  .Row3left { width: 100%; display: flex; gap: 40px; text-align: center;}
+  .Row3leftup ul, .Row3leftdown ul , .Row3rightup ul , .Row3rightdown ul {text-align: center;}
+
+  /*This is Row 4 Styling*/
+
+  .Row4   { margin-left: 20px; margin-right: 20px;}
+  .Row4left {padding-top: 100px;}
+  .Row4left p { margin-top: 20px; font-size: 18px;}
+  .Row4left h2 {font-size: 150px; line-height: 0.3;}
+  .Row4left h3 {font-size: 32px;}
+
+  /*this is Row5 Styling*/
+  .Row5Coloumns{display: block;}
+  .Row5left{width: 100%;}
+  .Row5right{width: 100%;}
+
+    /*This is Row 6 Styling*/
+
+   .Row6left h3 {line-height: 1;}
+   .Row6left p { width: 100%; margin-top: 20px; font-size: 18px;}
+   
+   /* This is Row 7 Styling*/ 
+   .Row7left {padding-left: 30px;}
+   .Row7left img{height: 350px;}
+   .Row7right h2{ font-size:20px ;}
+   .Row7right h3 {font-size: 28px; line-height: 1.3;}
+   .Row7right {gap: 10px; padding-right: 20px; padding-left: -10px}
+  
+
+}
+@media (max-width:768px) {
+    /*This is Row 1 Styling*/
+    .Row1left ul li p {margin-top: 20px; margin-bottom: 20px; text-align: justify;}
+    .Row1right img {height: 500px;}
+    .Row1left ul {padding-left: 10px; padding-right: 10px;}
+
+    /*This is Row 2 Styling*/
+    .Row2 {height: 350px; margin-top: 0px;}
+    .Row2Background {height: 200px;}
+    .Row2Box {width: 250px; height: 250px;}
+
+        /*This is Row 3 Styling*/
+    .Row3 {padding: 10px 20px;}
+    .Row3leftup, .Row3leftdown , .Row3rightup , .Row3rightdown {height: 350px;}
+    .Row3leftup ul li p, .Row3leftdown ul li p , .Row3rightup ul li p, .Row3rightdown ul  li p {text-align: center;}
+
+
+    /*This is Row4 Styling*/
+    .Row4 {flex-direction: column; }
+     .Row4left{width: 100%; padding-top: 100px; padding-bottom: 100px;}
+     .Row4right {width: 100%;}
+
+
+     /*This is Row5 Styling*/
+     .Row5 {margin: 40px 40px; }
+     .Row5left{display: block; }
+     .Row5right{display: block;}
+     .Row5Col-1{width: 100%; padding: 0%;}
+     .Row5Col-2{width: 100%; padding: 0%;}
+     .Row5Col-3{width: 100%; padding: 0%;}
+     .Row5Col-4{width: 100%; padding: 0%;}
+
+      /*This is Row6 Styling*/
+    .Row6 {flex-direction: column; padding-left: 40px; padding-right: 40px;}
+    .Row6left{width: 100%; text-align: center;}
+    .Row6right {width: 100%;}
+    
+ /*This is Row7 Styling*/
+  .Row7 {display: flex; flex-direction: column; margin: 40px 60px; row-gap: 60px; }
+  .Row7left {width: 100%; padding: 0%;}
+  .Row7right {width: 100%;text-align: center; }
+  .apply {justify-content: center;}
+    
+}
+@media (max-width: 530px) {
+    /*This is Row 1 Styling*/
+    .Row1left ul li h2{font-size: 44px;}
+    .BusinessSolutionButton {margin-bottom: 20px; width: 100%;}
+    .DriveWithUsButton {width: 100%;}
+
+/*This is Row7 Styling*/
+   .Row7 {margin: 30px 40px;}
+}
+@media (max-width: 468px) {
+    /*This is Row 1 Styling*/
+    .Row1left {padding: 30px 10px;}
+    .Row1left ul li h2{font-size: 40px;}
+    .Row1left ul li p {font-size: 14px; line-height: 16px;}
+    .Row1right img {height: 400px;}
+
+      /*This is Row 3 St yling*/
+   .Row3 {padding: 10px 10px;}
+   .Row3left {display: flex; flex-direction: column;}
+   .Row3right {display: flex; flex-direction: column;}
+   .Row3leftup {margin-bottom: 10px;}
+   .Row3leftup, .Row3leftdown , .Row3rightup , .Row3rightdown {height: 300px;}
+
+
+
+   /*This is Row 4 Styling8*/
+   .Row4 {margin-left: 10px; margin-right: 10px;}
+   .Row4right img { height: 400px;}
+   .Row4left { padding: 50px 30px}
+
+     /*This is Row 6 Styling8*/
+      .Row6 {padding: 20px 20px;}
+     .Row6right img { height: 400px;}
+     .Row6left { padding: 20px 30px}
+     .Row6left p {width: 100%; text-align: start;}
+     .Row6left h3 { line-height: 40px; text-align: start; font-size: 40px;}
+
+    /*This is Row7 Styling*/
+   .Row7right {padding: 0%; gap: 30px; }
+   .Row7right h2{ font-size:16px ;}
+   .Row7right h3 {font-size: 21px; line-height: 1.3;}
+
+}
