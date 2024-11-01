@@ -2,6 +2,7 @@ import React from "react";
 import "../../src/Styles/Menu.css";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 const Home = () => {
+  
   return (
     <>
       <div className="Row1">                                                        {/*This is Row 1 content*/}

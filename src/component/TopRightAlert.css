@@ -1,0 +1,10 @@
+.login-success-alert {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 9999;
+  }
