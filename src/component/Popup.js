@@ -10,7 +10,7 @@ const Popup = (props) => {
 
   // State to show alerts
   const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState('');
+  const [alertMessage, setAlertMessage] = useState(false);
 
   // Function to show a success alert for login
   const handleLoginSuccessful = () => {
@@ -52,8 +52,11 @@ const Popup = (props) => {
             <li><img src={require('../Images/02.png')} alt='' width={200} /></li>
             <li><input type='email' placeholder='johndoe@domain.com'></input></li>
             <li><input type='password' placeholder='..........'></input></li>
-            <li onClick={alert('This email is already in use')} ><button onClick={() => setMode('Companyregister') }>Next</button></li>
-            <li style={{ color: "white" }}>Already have an account? <span onClick={() => setMode('login')} style={{ cursor: "pointer" }}>Login</span></li>
+            <li>
+  <button onClick={() => {setMode('Companyregister');alert('Email is already in use');}}>
+    Next
+  </button>
+</li>            <li style={{ color: "white" }}>Already have an account? <span onClick={() => setMode('login')} style={{ cursor: "pointer" }}>Login</span></li>
           </>
         );
 
@@ -69,21 +72,59 @@ const Popup = (props) => {
             <CustomAlertPopup title="We are currently verifying your Company we'll let you once get approved. Thank You" />
             
           );
-
-      case 'forgotPassword':
-        return (
-          <>
-            <li><h3 style={{ color: "white", marginBottom: "-15px" }}>Forgot Password</h3></li>
-            <li><input type='email' placeholder='Enter your email'></input></li>
-            <li><button onClick={handleEmailVerification}>Send Verification Code</button></li>
-            <li style={{ color: "white" }}>Remember your password? <span onClick={() => setMode('login')} style={{ cursor: "pointer" }}>Login</span></li>
-          </>
-        );
-
-      default:
-        return null;
-    }
-  };
+          case 'Companyregister':
+            return (
+              <>
+                <li><h3 style={{ color: "white", marginBottom: "-15px" }}>Register Yourself & Your Company</h3></li>
+                <li><img src={require('../Images/02.png')} alt='' width={200} /></li>
+                <li><input type='text' placeholder='Your Name'></input></li>
+                <li><input type='text' placeholder='Your Position'></input></li>
+                <li><input type='text' placeholder='Company Name'></input></li>
+                <li><input type='text' placeholder='Company Phone Number'></input></li>
+                <li><input type='text' placeholder='Company Address'></input></li>
+                <li><button onClick={() => setMode('ContactInfo')}>Next</button></li>
+                <li><button onClick={() => setMode('register')}>Back</button></li>
+              </>
+            );
+          case 'ContactInfo':
+            return (
+              <>
+                <li><h3 style={{ color: "white", marginBottom: "-15px" }}>Register Yourself & Your Company</h3></li>
+                <li><img src={require('../Images/02.png')} alt='' width={200} /></li>
+                <li><input type='text' placeholder='Contact Name'></input></li>
+                <li><input type='text' placeholder='Contact Job Title'></input></li>
+                <li><input type='email' placeholder='Contact Email'></input></li>
+                <li><button onClick={() => setMode('AlternativeContactInfo')}>Next</button></li>
+                <li><button onClick={() => setMode('Companyregister')}>Back</button></li>
+              </>
+            );
+          case 'AlternativeContactInfo':
+            return (
+              <>
+                <li><h3 style={{ color: "white", marginBottom: "-15px" }}>Register Yourself & Your Company</h3></li>
+                <li><img src={require('../Images/02.png')} alt='' width={200} /></li>
+                <li><input type='text' placeholder='Alternative Contact Name'></input></li>
+                <li><input type='text' placeholder='Alternative Contact Job Title'></input></li>
+                <li><input type='email' placeholder='Alternative Contact Email'></input></li>
+                <li><button onClick={() => setMode('AlertSignUp')}>Sign Up</button></li>
+                <li><button onClick={() => setMode('ContactInfo')}>Back</button></li>
+              </>
+            );
+            case 'forgotPassword':
+              return (
+                <>
+                  <li><h3 style={{ color: "white", marginBottom: "-15px" }}>Forgot Password</h3></li>
+                  <li><input type='email' placeholder='Enter your email'></input></li>
+                  <li><button onClick={handleEmailVerification}>Send Verification Code</button></li>
+                  <li style={{ color: "white" }}>Remember your password? <span onClick={() => setMode('login')} style={{ cursor: "pointer" }}>Login</span></li>
+                </>
+              );
+      
+            default:
+              return null;
+          }
+        };
+    
 
   return props.trigger ? (
     <div className='loginPopup'>
