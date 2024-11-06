@@ -4,6 +4,7 @@ import Dhead from "../component/Dhead";
 import { Outlet } from "react-router-dom";
 import '../pages/Dashboard.css'
 
+
 const Layout2 = () => {
 
     
@@ -13,9 +14,9 @@ const Layout2 = () => {
         <Slider  />
         <div className="MainContent">
           <Dhead />
-          <div>
+          <main>
               <Outlet/>
-          </div>
+          </main>
         </div>
       </div>
     </>

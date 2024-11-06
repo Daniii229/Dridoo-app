@@ -14,8 +14,8 @@ const Card = (props) => {
       <ul>
         <li><h2>{title}</h2></li>
         <li><p>{paragraph}</p></li>
-       
-       <Link to='/SelectJob'> <button>Start a Job</button></Link>
+        <Link to="/dashboard/SelectJob"> <button>Start a Job</button></Link>
+
       </ul>
     </div>
   );

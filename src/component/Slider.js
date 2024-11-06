@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import "../component/Slider.css";
 import Dropdownitem from "./Dropdownitem";
 
+
 const Slider = ({ className }) => {
   
   return (
@@ -35,28 +36,28 @@ const Slider = ({ className }) => {
       <Dropdownitem
         title="Job"
         items={["Today's", "Future", "Completed", "Cancelled"]}
-        links={["/Jobs", "/FutureJobs", "/CompletedJobs", "/CanceledJobs"]}
+        links={["/dashboard/Jobs", "/dashboard/FutureJobs", "/dashboard/CompletedJobs", "/dashboard/CanceledJobs"]}
         icon={<FaBriefcase />}
       />
 
       <Dropdownitem
         title="Scheduler"
         items={["Timeline", "List", "Kanban"]}
-        links={["/Timeline", "/List", "/Kanban"]}
+        links={["/dashboard/Timeline", "/dashboard/List", "/dashboard/Kanban"]}
         icon={<FaCalendar />}
       />
 
       <Dropdownitem
         title="Configuration"
         items={["Pricing", "Drivers", "Company", "Setting"]}
-        links={["/Pricing", "/Drivers", "/CustomerCompany", "Settings"]}
+        links={["/dashboard/Pricing", "/dashboard/Drivers", "/dashboard/CustomerCompany", "/dashboard/Settings"]}
         icon={<FaCog />}
       />
 
       <Dropdownitem
         title="Admin"
         items={["Users", "CX", "Support"]}
-        links={["/Users", "/CX", "/Support"]}
+        links={["/dashboard/Users", "/dashboard/CX", "/dashboard/Support"]}
         icon={<FaUser />}
       />
       
@@ -73,6 +74,7 @@ const Slider = ({ className }) => {
         links={["/Dashboard"]}
         icon={<FaChargingStation />}
       />
+      
     </div>
   );
 };

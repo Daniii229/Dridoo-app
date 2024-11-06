@@ -1,33 +1,65 @@
 // InputField.js
-
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import './InputField.css'; // Optional for styling
 
-const Input = ({ label, placeholder, type, onChange }) => {
+const Input = ({ label, placeholder, type = "text", onChange, value }) => {
     return (
         <div className="input-field">
             <label>{label}</label>
             <input
                 type={type}
                 placeholder={placeholder}
-                onChange={onChange}
+                onChange={onChange} // Handles input change
+                value={value} // Controlled input value
                 className="input"
             />
         </div>
     );
 };
 
-// Default props
+// Default props (optional, but useful)
+Input.defaultProps = {
+    type: "text", // Default type is text
+};
 
-
-// Prop types for validation
+// Prop types for validation (optional, but recommended)
 Input.propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     type: PropTypes.string,
-    value: PropTypes.string,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
 };
 
 export default Input;
+
+
+// // InputField.js
+
+
+// import React from 'react';
+// import './InputField.css'; // Optional for styling
+
+// const Input = ({ label, placeholder, type, onChange, value }) => {
+//     return (
+//         <div className="input-field">
+//             <label>{label}</label>
+//             <input
+//                 type={type}
+//                 placeholder={placeholder}
+//                 onChange={onChange}
+//                 value={value}
+//                 className="input"
+//             />
+//         </div>
+//     );
+// };
+
+// // Default props
+
+
+// // Prop types for validation
+
+
+// export default Input;
