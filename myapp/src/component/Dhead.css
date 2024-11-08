@@ -1,0 +1,91 @@
+
+.headitems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    background-color: #D4DFE7;
+    padding: 20px;
+    height: 75px;
+}
+
+.search-input input {
+    height: 35px;
+    border: none;
+    border-radius: 16px;
+    padding-left: 15px;
+    width: 250px;
+}
+
+.search-input {
+    display: flex;
+    gap: 10px; 
+}
+
+.User-data {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.User-data img {
+    width: 40px; border-radius: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 2600px) {
+    .bars {
+        display: none; /* Hide bars on very large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .bars {
+        display: block; /* Show bars on smaller screens */
+    }
+    
+    /* You can add additional styles for smaller screens if needed */
+}
+
+
+
+
+/* 
+
+.headitems {
+    display: flex;
+    justify-content: space-between;
+    background-color:  #D4DFE7;
+    padding: 20px;
+    height: 75px;
+    
+}
+.search-input input {
+    height: 35px; border: none; border-radius: 16px; padding-left: 15px; width: 250px;
+}
+.search-input {
+    display: flex; gap: 10px; 
+}
+
+.User-data {
+    display: flex; gap: 15px; justify-content: center; align-items: center;
+}
+.User-data img {
+    width: 40px;
+}
+
+
+
+@media (max-width: 2600px) {
+  .bars{
+    display: none;
+}
+  } 
+
+
+  @media (max-width: 992px ) {
+    .bars {
+        display: block; 
+    }
+  
+  } */

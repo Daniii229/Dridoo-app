@@ -1,0 +1,9 @@
+.MainContent {
+   width: 100%; position: relative; z-index: 3;  height: auto; min-height: 700px; background-color:  #D4DFE7;
+}
+.bodycontent {
+    padding: 40px; display: flex; flex-wrap: wrap; gap: 40px;
+}
+
+
+

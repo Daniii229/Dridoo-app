@@ -1,0 +1,16 @@
+.jobstable table {
+  width: 100%; border: 1px solid rgb(216, 213, 213) ; border-radius: 12px; background-color: rgb(241, 244, 245); text-align: center;
+
+}
+.jobstable {
+    width: 100%;
+}
+.jobstable table th {
+    border-bottom: 1px solid rgb(216, 213, 213);
+}
+.jobstable table th{
+    padding: 20px;
+}
+.jobstable table td {
+    padding: 5px;
+}

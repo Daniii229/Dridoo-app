@@ -1,0 +1,10 @@
+.KanbanTable th {
+    background-color: #f9fcfe; border-radius: 20px;  padding: 10px; border: 1px solid rgb(237, 234, 234);
+}
+.KanbanTable {
+    width: 100%; 
+}
+.KanbanTable td {
+    background-color: #f9fcfe; border-bottom-left-radius: 15px;  border-bottom-right-radius: 15px; }
+.KanbanTable table {
+    width: 100%;   border: none;  border: none;}

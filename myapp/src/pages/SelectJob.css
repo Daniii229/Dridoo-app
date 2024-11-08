@@ -1,0 +1,24 @@
+.SelectJob {
+  display: flex; flex-direction: column;  align-items: center; margin-top: 100px; width: 100%; height: 100%;
+}
+.SelectJob p {
+    margin: 40px 0px; font-size: 16px;
+}
+.single {
+    background-color: white; width: 220px; height: 160px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+}
+.single h3 {
+    font-size: 26px; font-weight: 700; color: #27374D; 
+}
+a {
+    text-decoration: none;
+}
+.SelectJobCard {
+    display: flex; gap: 10px;
+}
+.multiple {
+    background-color: white; width: 220px; height: 160px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+}
+.multiple h3 {
+    font-size: 26px; font-weight: 700; color: #27374D;
+}
