@@ -1,11 +1,16 @@
+
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../component/Button";
 import Checkbutton from "../component/Checkbutton";
+import DropdownInput from "../component/DropdownInput";
 import Input from "../component/Input";
 import "../pages/CreateJob.css";
+import ReactDatePicker from "../component/ReactDatePicker";
 
 const CreateJob = () => {
+  const [date, setDate] = useState(null);
   // States for various inputs
   const [plateNumber, setPlateNumber] = useState('');
   const [carModel, setCarModel] = useState('');
@@ -28,6 +33,13 @@ const CreateJob = () => {
   const [deliveryHouseNumber, setDeliveryHouseNumber] = useState('');
   const [deliveryPickUpDate, setDeliveryPickUpDate] = useState('');
 
+  // State for car wash options
+  const [showCarWashOptions, setShowCarWashOptions] = useState(false);
+  // State for refueling options
+  const [showRefuelOptions, setShowRefuelOptions] = useState(false);
+  // State for fluid topup input visibility
+  const [showFluidTopupInput, setShowFluidTopupInput] = useState(false);
+
   // Update delivery details based on checkbox status
   const handleCheckboxChange = (e) => {
     const checked = e.target.checked;
@@ -41,15 +53,7 @@ const CreateJob = () => {
       setDeliveryAddress(collectionAddress);
       setDeliveryHouseNumber(houseNumber);
       setDeliveryPickUpDate(pickUpDate);
-    } else {
-      // Clear delivery details when checkbox is unchecked
-      setDeliveryFullName('');
-      setDeliveryEmailAddress('');
-      setDeliveryPhoneNumber('');
-      setDeliveryAddress('');
-      setDeliveryHouseNumber('');
-      setDeliveryPickUpDate('');
-    }
+    } 
   };
 
   return (
@@ -133,12 +137,9 @@ const CreateJob = () => {
                 />
               </td>
               <td>
-                <Input
-                  label="Collection Address"
-                  value={collectionAddress}
-                  onChange={(e) => setCollectionAddress(e.target.value)}
-                  placeholder="Enter Collection Address"
-                />
+              <DropdownInput 
+              label="Collection Address"
+             />
               </td>
             </tr>
             <tr>
@@ -151,12 +152,10 @@ const CreateJob = () => {
                 />
               </td>
               <td>
-                <Input
-                  label="Pick Up Date"
-                  value={pickUpDate}
-                  onChange={(e) => setPickUpDate(e.target.value)}
-                  placeholder="Enter Pick Up Date"
-                />
+               <ReactDatePicker 
+                 label="Pickup Date"
+                 selectedDate={date} onDateChange={setDate} 
+               />
               </td>
             </tr>
           </tbody>
@@ -181,19 +180,17 @@ const CreateJob = () => {
               <td>
                 <Input
                   label="Full Name"
-                  value={isSameAsCollection ? fullName : deliveryFullName}
+                  value={deliveryFullName}
                   onChange={(e) => setDeliveryFullName(e.target.value)}
                   placeholder="Enter Full Name"
-                  disabled={isSameAsCollection}
                 />
               </td>
               <td>
                 <Input
                   label="Email Address"
-                  value={isSameAsCollection ? emailAddress : deliveryEmailAddress}
+                  value={deliveryEmailAddress}
                   onChange={(e) => setDeliveryEmailAddress(e.target.value)}
                   placeholder="Enter Email"
-                  disabled={isSameAsCollection}
                 />
               </td>
             </tr>
@@ -201,40 +198,31 @@ const CreateJob = () => {
               <td>
                 <Input
                   label="Phone Number"
-                  value={isSameAsCollection ? phoneNumber : deliveryPhoneNumber}
+                  value={deliveryPhoneNumber}
                   onChange={(e) => setDeliveryPhoneNumber(e.target.value)}
                   placeholder="Enter Phone Number"
-                  disabled={isSameAsCollection}
                 />
               </td>
               <td>
-                <Input
-                  label="Collection Address"
-                  value={isSameAsCollection ? collectionAddress : deliveryAddress}
-                  onChange={(e) => setDeliveryAddress(e.target.value)}
-                  placeholder="Enter Collection Address"
-                  disabled={isSameAsCollection}
-                />
+             <DropdownInput 
+              label="Delivery Address"
+             />
               </td>
             </tr>
             <tr>
               <td>
                 <Input
                   label="House Number"
-                  value={isSameAsCollection ? houseNumber : deliveryHouseNumber}
+                  value={deliveryHouseNumber}
                   onChange={(e) => setDeliveryHouseNumber(e.target.value)}
                   placeholder="Enter House Number"
-                  disabled={isSameAsCollection}
                 />
               </td>
               <td>
-                <Input
-                  label="Pick Up Date"
-                  value={isSameAsCollection ? pickUpDate : deliveryPickUpDate}
-                  onChange={(e) => setDeliveryPickUpDate(e.target.value)}
-                  placeholder="Enter Pick Up Date"
-                  disabled={isSameAsCollection}
-                />
+              <ReactDatePicker 
+                 label="Delivery Date"
+                 selectedDate={date} onDateChange={setDate} 
+               />
               </td>
             </tr>
           </tbody>
@@ -250,13 +238,80 @@ const CreateJob = () => {
       />
 
       {/* Services section */}
-      <div style={{ display: "flex", gap: "10px" }}>
-        <p>Include Services</p>
+      <div style={{ display: "flex", gap: "20px" }}>
+
+        <p>Include Services:</p>
+     <div style={{display:"flex", gap:"10px"}}>
+     <p>Tyre Check</p>
+     <Checkbutton />
+     </div>
+     <div style={{display:"flex",gap:"10px" }}>
+
+        <p>Parking</p>
         <Checkbutton />
+        </div>
+        <div style={{display:"flex",gap:"10px"}}>
+        <p>Fluid Topup</p>
+        <input
+          type="checkbox"
+          onChange={(e) => setShowFluidTopupInput(e.target.checked)}
+        />
+       </div>
+       <div style={{display:"flex",gap:"10px"}}>
+
+       
         <p>Car Wash</p>
-        <Checkbutton />
+        <input
+          type="checkbox"
+          onChange={(e) => setShowCarWashOptions(e.target.checked)}
+        />
+        </div>
+        <div style={{display:"flex",gap:"10px"}}>
+
+        
         <p>Refueling</p>
+        <input
+          type="checkbox"
+          onChange={(e) => setShowRefuelOptions(e.target.checked)}
+        />
+        </div>
       </div>
+
+      {/* Car wash options */}
+      {showCarWashOptions && (
+        <div style={{ paddingLeft: "20px", display:"flex", gap:"10px", marginTop: "10px" }}>
+          <Checkbutton />
+          <p>Car Wash Interior</p>
+          <Checkbutton />
+          <p>Car Wash Exterior</p>
+          <Checkbutton />
+          <p>Car Wash Complete</p>
+        </div>
+      )}
+
+      {/* Refueling options */}
+      {showRefuelOptions && (
+        <div style={{ paddingLeft: "20px", display:"flex", gap:"10px", marginTop: "10px" }}>
+          <Checkbutton />
+          <p>Petrol 98</p>
+          <Checkbutton />
+          <p>Petrol 95</p>
+          <Checkbutton />
+          <p>Diesel</p>
+          <Checkbutton />
+          <p>EV</p>
+        </div>
+      )}
+
+      {/* Fluid Topup input */}
+      {showFluidTopupInput && (
+        <div style={{ paddingLeft: "20px", width:"100px", marginTop: "10px" }}>
+          <Input 
+            label=" Fluid Topup" 
+            placeholder="$" 
+          />
+        </div>
+      )}
 
       {/* Total Price section */}
       <div style={{ display: "flex", gap: "20px", height: "40px" }}>
@@ -284,6 +339,7 @@ const CreateJob = () => {
 };
 
 export default CreateJob;
+
 
 
 

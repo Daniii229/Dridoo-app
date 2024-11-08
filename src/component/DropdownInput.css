@@ -1,0 +1,10 @@
+.DropdownInput input {
+    height:45px;
+    border-radius: 13px;
+    border: 1px solid #27374D;
+    padding-left: 5px;
+    background-color: rgb(228, 235, 237);
+}
+.DropdownInput {
+      display: flex; flex-direction: column; gap: 3px; position: relative; z-index: 1;
+}
