@@ -24,8 +24,9 @@ const DatePicker = ({ label, selectedDate, onDateChange }) => {
     const daysInMonth = [];
     const firstDayIndex = startOfMonth.getDay();
 
+    // Padding days for the first week
     for (let i = 0; i < firstDayIndex; i++) {
-      daysInMonth.push(null); // Padding empty days
+      daysInMonth.push(null);
     }
 
     for (let day = 1; day <= endOfMonth.getDate(); day++) {
@@ -44,6 +45,14 @@ const DatePicker = ({ label, selectedDate, onDateChange }) => {
     return date ? `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}` : '';
   };
 
+  const changeMonth = (monthOffset) => {
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + monthOffset, 1));
+  };
+
+  const changeYear = (yearOffset) => {
+    setCurrentDate(new Date(currentDate.getFullYear() + yearOffset, currentDate.getMonth(), 1));
+  };
+
   return (
     <div className="date-picker" ref={dateInputRef}>
       <label>{label}</label>
@@ -57,9 +66,13 @@ const DatePicker = ({ label, selectedDate, onDateChange }) => {
       {showCalendar && (
         <div className="calendar">
           <div className="header">
+            <button onClick={() => changeYear(-1)}>Previous Year</button>
+            <button onClick={() => changeMonth(-1)}>Previous Month</button>
             <span>
               {currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}
             </span>
+            <button onClick={() => changeMonth(1)}>Next Month</button>
+            <button onClick={() => changeYear(1)}>Next Year</button>
           </div>
           <div className="days">
             {daysOfWeek.map((day, index) => (
