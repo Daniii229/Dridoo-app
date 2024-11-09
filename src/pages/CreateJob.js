@@ -10,8 +10,10 @@ import "../pages/CreateJob.css";
 import ReactDatePicker from "../component/ReactDatePicker";
 
 const CreateJob = () => {
-  const [date, setDate] = useState(null);
-  // States for various inputs
+  const [pickupDate, setPickupDate] = useState(null);
+  const [deliveryDate, setDeliveryDate] = useState(null);
+
+  // Other states for input fields
   const [plateNumber, setPlateNumber] = useState('');
   const [carModel, setCarModel] = useState('');
   const [carBrand, setCarBrand] = useState('');
@@ -21,39 +23,33 @@ const CreateJob = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [collectionAddress, setCollectionAddress] = useState('');
   const [houseNumber, setHouseNumber] = useState('');
-  const [pickUpDate, setPickUpDate] = useState('');
   const [notes, setNotes] = useState('');
 
-  // States for delivery person details
+  // Delivery person details
   const [isSameAsCollection, setIsSameAsCollection] = useState(false);
   const [deliveryFullName, setDeliveryFullName] = useState('');
   const [deliveryEmailAddress, setDeliveryEmailAddress] = useState('');
   const [deliveryPhoneNumber, setDeliveryPhoneNumber] = useState('');
   const [deliveryAddress, setDeliveryAddress] = useState('');
   const [deliveryHouseNumber, setDeliveryHouseNumber] = useState('');
-  const [deliveryPickUpDate, setDeliveryPickUpDate] = useState('');
 
-  // State for car wash options
+  // Service option states
   const [showCarWashOptions, setShowCarWashOptions] = useState(false);
-  // State for refueling options
   const [showRefuelOptions, setShowRefuelOptions] = useState(false);
-  // State for fluid topup input visibility
   const [showFluidTopupInput, setShowFluidTopupInput] = useState(false);
 
-  // Update delivery details based on checkbox status
+  // Checkbox change handler for delivery details
   const handleCheckboxChange = (e) => {
     const checked = e.target.checked;
     setIsSameAsCollection(checked);
 
     if (checked) {
-      // Copy collection details to delivery details
       setDeliveryFullName(fullName);
       setDeliveryEmailAddress(emailAddress);
       setDeliveryPhoneNumber(phoneNumber);
       setDeliveryAddress(collectionAddress);
       setDeliveryHouseNumber(houseNumber);
-      setDeliveryPickUpDate(pickUpDate);
-    } 
+    }
   };
 
   return (
@@ -137,9 +133,7 @@ const CreateJob = () => {
                 />
               </td>
               <td>
-              <DropdownInput 
-              label="Collection Address"
-             />
+                <DropdownInput label="Collection Address" />
               </td>
             </tr>
             <tr>
@@ -152,10 +146,11 @@ const CreateJob = () => {
                 />
               </td>
               <td>
-               <ReactDatePicker 
-                 label="Pickup Date"
-                 selectedDate={date} onDateChange={setDate} 
-               />
+                <ReactDatePicker 
+                  label="Pickup Date"
+                  selectedDate={pickupDate}
+                  onDateChange={setPickupDate}
+                />
               </td>
             </tr>
           </tbody>
@@ -204,9 +199,7 @@ const CreateJob = () => {
                 />
               </td>
               <td>
-             <DropdownInput 
-              label="Delivery Address"
-             />
+                <DropdownInput label="Delivery Address" />
               </td>
             </tr>
             <tr>
@@ -219,10 +212,11 @@ const CreateJob = () => {
                 />
               </td>
               <td>
-              <ReactDatePicker 
-                 label="Delivery Date"
-                 selectedDate={date} onDateChange={setDate} 
-               />
+                <ReactDatePicker 
+                  label="Delivery Date"
+                  selectedDate={deliveryDate}
+                  onDateChange={setDeliveryDate}
+                />
               </td>
             </tr>
           </tbody>
@@ -239,47 +233,41 @@ const CreateJob = () => {
 
       {/* Services section */}
       <div style={{ display: "flex", gap: "20px" }}>
-
         <p>Include Services:</p>
-     <div style={{display:"flex", gap:"10px"}}>
-     <p>Tyre Check</p>
-     <Checkbutton />
-     </div>
-     <div style={{display:"flex",gap:"10px" }}>
-
-        <p>Parking</p>
-        <Checkbutton />
+        <div style={{ display: "flex", gap: "10px" }}>
+          <p>Tyre Check</p>
+          <Checkbutton />
         </div>
-        <div style={{display:"flex",gap:"10px"}}>
-        <p>Fluid Topup</p>
-        <input
-          type="checkbox"
-          onChange={(e) => setShowFluidTopupInput(e.target.checked)}
-        />
-       </div>
-       <div style={{display:"flex",gap:"10px"}}>
-
-       
-        <p>Car Wash</p>
-        <input
-          type="checkbox"
-          onChange={(e) => setShowCarWashOptions(e.target.checked)}
-        />
+        <div style={{ display: "flex", gap: "10px" }}>
+          <p>Parking</p>
+          <Checkbutton />
         </div>
-        <div style={{display:"flex",gap:"10px"}}>
-
-        
-        <p>Refueling</p>
-        <input
-          type="checkbox"
-          onChange={(e) => setShowRefuelOptions(e.target.checked)}
-        />
+        <div style={{ display: "flex", gap: "10px" }}>
+          <p>Fluid Topup</p>
+          <input
+            type="checkbox"
+            onChange={(e) => setShowFluidTopupInput(e.target.checked)}
+          />
+        </div>
+        <div style={{ display: "flex", gap: "10px" }}>
+          <p>Car Wash</p>
+          <input
+            type="checkbox"
+            onChange={(e) => setShowCarWashOptions(e.target.checked)}
+          />
+        </div>
+        <div style={{ display: "flex", gap: "10px" }}>
+          <p>Refueling</p>
+          <input
+            type="checkbox"
+            onChange={(e) => setShowRefuelOptions(e.target.checked)}
+          />
         </div>
       </div>
 
       {/* Car wash options */}
       {showCarWashOptions && (
-        <div style={{ paddingLeft: "20px", display:"flex", gap:"10px", marginTop: "10px" }}>
+        <div style={{ paddingLeft: "20px", display: "flex", gap: "10px", marginTop: "10px" }}>
           <Checkbutton />
           <p>Car Wash Interior</p>
           <Checkbutton />
@@ -291,23 +279,21 @@ const CreateJob = () => {
 
       {/* Refueling options */}
       {showRefuelOptions && (
-        <div style={{ paddingLeft: "20px", display:"flex", gap:"10px", marginTop: "10px" }}>
+        <div style={{ paddingLeft: "20px", display: "flex", gap: "10px", marginTop: "10px" }}>
           <Checkbutton />
           <p>Petrol 98</p>
           <Checkbutton />
           <p>Petrol 95</p>
           <Checkbutton />
           <p>Diesel</p>
-          <Checkbutton />
-          <p>EV</p>
         </div>
       )}
 
       {/* Fluid Topup input */}
       {showFluidTopupInput && (
-        <div style={{ paddingLeft: "20px", width:"100px", marginTop: "10px" }}>
+        <div style={{ paddingLeft: "20px", width: "100px", marginTop: "10px" }}>
           <Input 
-            label=" Fluid Topup" 
+            label="Fluid Topup Amount" 
             placeholder="$" 
           />
         </div>
@@ -316,12 +302,10 @@ const CreateJob = () => {
       {/* Total Price section */}
       <div style={{ display: "flex", gap: "20px", height: "40px" }}>
         <h2 style={{ paddingTop: "5px" }}>Total Price</h2>
-        <Input 
-          placeholder="$" 
-        />
+        <Input placeholder="$" />
       </div>
 
-      {/* Buttons */}
+      {/* Action buttons */}
       <div style={{ display: "flex", width: "100%", gap: "20px" }}>
         <div style={{ width: "50%" }}>
           <Link to="/Dashboard">
@@ -339,7 +323,6 @@ const CreateJob = () => {
 };
 
 export default CreateJob;
-
 
 
 
