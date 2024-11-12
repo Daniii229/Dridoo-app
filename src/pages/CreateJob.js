@@ -1,7 +1,8 @@
-
-
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios'; // Import Axios for making HTTP requests
+
+// Import your components here (Button, Checkbutton, etc.)
 import Button from "../component/Button";
 import Checkbutton from "../component/Checkbutton";
 import DropdownInput from "../component/DropdownInput";
@@ -12,8 +13,9 @@ import ReactDatePicker from "../component/ReactDatePicker";
 const CreateJob = () => {
   const [pickupDate, setPickupDate] = useState(null);
   const [deliveryDate, setDeliveryDate] = useState(null);
+  const navigate = useNavigate();
 
-  // Other states for input fields
+  // Define all states as needed
   const [plateNumber, setPlateNumber] = useState('');
   const [carModel, setCarModel] = useState('');
   const [carBrand, setCarBrand] = useState('');
@@ -49,6 +51,34 @@ const CreateJob = () => {
       setDeliveryPhoneNumber(phoneNumber);
       setDeliveryAddress(collectionAddress);
       setDeliveryHouseNumber(houseNumber);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/api/jobs', {
+        plateNumber,
+        carModel,
+        carBrand,
+        carColor,
+        fullName,
+        emailAddress,
+        phoneNumber,
+        collectionAddress,
+        houseNumber,
+        notes,
+        deliveryFullName,
+        deliveryEmailAddress,
+        deliveryPhoneNumber,
+        deliveryAddress,
+        deliveryHouseNumber,
+        pickupDate,
+        deliveryDate,
+      });
+      navigate("/dashboard/Jobs"); // Redirect after submission
+    } catch (error) {
+      console.error("There was an error creating the job!", error);
     }
   };
 
@@ -314,7 +344,7 @@ const CreateJob = () => {
         </div>
         <div style={{ width: "50%" }}>
           <Link to="/dashboard/Jobs">
-            <Button title="Book Now" backgroundColor="#27374D" />
+            <Button title="Book Now" onClick={handleSubmit} backgroundColor="#27374D" />
           </Link>
         </div>
       </div>
@@ -323,143 +353,3 @@ const CreateJob = () => {
 };
 
 export default CreateJob;
-
-
-
-
-// import React,{useState} from "react";
-// import { Link } from "react-router-dom";
-// import Button from "../component/Button";
-// import Checkbutton from "../component/Checkbutton";
-// import Input from "../component/Input";
-// import "../pages/CreateJob.css";
-// const CreateJob = () => {
-//   const [inputValue, setInputValue] = useState(''); // State to hold input value
-
-//   // Function to handle input changes
-//   const handleInputChange = (event) => {
-//       setInputValue(event.target.value); // Update the state with the input value
-//   };
-//   return (
-//     <>
-//       <div className="Createjob-content">
-//         <div className="Car-information">
-//           <h2>Create a New Job</h2>
-//           <h3>Car Information</h3>
-//           <table>
-//             <tr>
-//               <td>
-//                 <Input label="Plate Number"  value={inputValue}  onChange={handleInputChange}  placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Car Model (Option)" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//             <tr>
-//               <td>
-//                 <Input label="Car brand" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Car Color" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//           </table>
-//           <button className="Confirmbtn">Confirm vehicle</button>
-//         </div>
-
-//         <div className="Person-in-collection">
-//           <h3>Person In Collection</h3>
-//           <table>
-//             <tr>
-//               <td>
-//                 <Input label="Full Name" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Email Address" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//             <tr>
-//               <td>
-//                 <Input label="Phone Number" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Collection Address" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//             <tr>
-//               <td>
-//                 <Input label="House Number" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Pick up Date" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//           </table>
-//         </div>
-//         <div className="Person-in-collection">
-//           <h3>Person In Delivery</h3>
-//           <div style={{ display: "flex", gap: "5px" }}>
-//             <Checkbutton />
-//             <p>Same Details as person in Collection</p>
-//           </div>
-
-//           <table>
-//             <tr>
-//               <td>
-//                 <Input label="Full Name" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Email Address" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//             <tr>
-//               <td>
-//                 <Input label="Phone Number" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Collection Address" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//             <tr>
-//               <td>
-//                 <Input label="House Number" placeholder="lorem ispum" />
-//               </td>
-//               <td>
-//                 <Input label="Pick up Date" placeholder="lorem ispum" />
-//               </td>
-//             </tr>
-//           </table>
-//         </div>
-//         <Input label="Notes" />
-//         <div style={{ display: "flex", gap: "10px" }}>
-//           <p>Include Services</p>
-//           <Checkbutton />
-//           <p>Car Wash</p>
-//           <Checkbutton />
-//           <p>Refueling</p>
-//         </div>
-//         <div style={{ display: "flex", gap: "20px", height: "40px" }}>
-//           <h2 style={{ paddingTop: "5px" }}>Total Price</h2>{" "}
-//           <Input placeholder="$" />
-//         </div>
-//         <div style={{ display: "flex", width: "100%", gap: "20px" }}>
-//           <div style={{ width: "50%" }}>
-//             {" "}
-//             <Link to="/Dashboard">
-//               {" "}
-//               <Button title="Back" backgroundColor="#D4DFE7" color="black" />
-//             </Link>
-//           </div>
-//           <div style={{ width: "50%" }}>
-//             <Link to="/Jobs">
-//               {" "}
-//               <Button title="Book Now" backgroundColor="#27374D" />{" "}
-//             </Link>{" "}
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default CreateJob;
