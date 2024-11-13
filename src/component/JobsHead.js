@@ -8,12 +8,14 @@ const JobsHead = (props) => {
     <div className='Jobheader'>
         <h2>{props.title}</h2>
         <div className='Jobheadmenu'>
-           <FaFilter/>
-           <h3>Filter By</h3>
+           
+           <h3><FaFilter/>Filter By</h3>
+           <div className='filters'>
            <Input placeholder="25/09/23"/>
            <Input placeholder="Job Id"/>
            <Input placeholder="Number Plate"/>
             <button className='filterbtn' ><FaRecycle/></button>
+            </div>
         </div>
 
     </div>

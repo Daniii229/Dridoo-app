@@ -3,7 +3,8 @@
 
 }
 .jobstable {
-    width: 100%;
+    width: 100%; overflow-x: auto;  /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 .jobstable table th {
     border-bottom: 1px solid rgb(216, 213, 213);
@@ -14,3 +15,14 @@
 .jobstable table td {
     padding: 5px;
 }
+
+  @media (max-width: 768px) {
+    .jobstable {
+      overflow-x: scroll;  /* Enable scrolling when on smaller screens */
+    }
+  
+    table {
+      min-width: 600px;  /* Ensure the table width is enough to trigger scrolling */
+    }
+  }
+  

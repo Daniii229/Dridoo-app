@@ -1,3 +1,8 @@
 .Todayjobcontent {
-   min-height: 600px; padding: 50px 40px; background-color: White; margin: 20px; border-radius: 10px; display: flex; flex-direction: column; gap: 40px;
+   min-height: 600px; padding: 50px 40px; background-color: White; margin: 20px; border-radius: 30px; display: flex; flex-direction: column; gap: 40px;
+}
+@media(max-width: 768px) {
+   .Todayjobcontent {
+      padding: 50px 20px;
+   }
 }

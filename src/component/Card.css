@@ -3,7 +3,7 @@
     background-color: rgb(238, 198, 183);
     width: 330px;
     height: 220px ;
-    border-radius: 20px;
+    border-radius: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -12,11 +12,19 @@
 }
 
 .card ul li h2 {
-    font-size: 20px;
+    font-size: 22px; font-weight: 500;
 }
 .card ul li p {
-    margin: 25px 0px;
+    margin: 25px 0px; font-weight: 400;
 }
 
 .card ul button{
     padding: 12px 40px;  background-color: #27374D; color: white;border: none; border-radius: 25px; cursor: pointer; }
+
+
+
+    @media(max-width: 768px) {
+        .card {
+            width: 100%;
+        }
+    }

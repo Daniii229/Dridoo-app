@@ -2,7 +2,31 @@
    width: 100%; position: relative; z-index: 3;  height: auto; min-height: 700px; background-color:  #D4DFE7;
 }
 .bodycontent {
-    padding: 40px; display: flex; flex-wrap: wrap; gap: 40px;
+     display: flex; flex-wrap: wrap; gap: 40px; background-color: white;
+}
+.Services{
+    margin: 20px;  border-radius: 30px;  background-color: white; padding: 40px; gap: 40px; display: flex; flex-direction: column;
+}
+.Services h1 {
+    font-size: 50px; font-weight: 600; 
+}
+
+@media (max-width: 1200px) {
+    .bodycontent{
+        gap: 10px; 
+    }
+    .Services {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .bodycontent{
+        gap: 20px;
+    }
+    .Services {
+        margin: 10px; gap: 30px; padding: 20px; justify-content: space-between;
+    }
 }
 
 

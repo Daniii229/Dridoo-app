@@ -47,6 +47,12 @@
     /* You can add additional styles for smaller screens if needed */
 }
 
+@media (max-width: 768px) {
+    .search-input input {
+        width: 150px;
+    }
+}
+
 
 
 

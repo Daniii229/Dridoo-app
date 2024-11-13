@@ -5,13 +5,16 @@ import "../component/Dhead.css";
 
 const Dhead = () => {
  
+  function Onhandleclickslider() {
+       
+  }
 
   return (
     <div className="headitems">
       <div className="search-input">
       
-        <div className="bars" style={{ paddingTop: "5px", cursor: "pointer" }}>
-          <FaBars fontSize={20} />
+        <div onclick={Onhandleclickslider} className="bars" style={{ paddingTop: "5px", cursor: "pointer" }}>
+          <  FaBars fontSize={20} />
          
         </div>
         <input 

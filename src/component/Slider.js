@@ -17,6 +17,8 @@ import Dropdownitem from "./Dropdownitem";
 
 const Slider = ({ className }) => {
   
+ 
+
   return (
     
     <div className="slider"  >

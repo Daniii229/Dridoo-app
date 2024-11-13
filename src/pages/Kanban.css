@@ -2,9 +2,21 @@
     background-color: #f9fcfe; border-radius: 20px;  padding: 10px; border: 1px solid rgb(237, 234, 234);
 }
 .KanbanTable {
-    width: 100%; 
+    width: 100%; overflow-x: auto;  /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
 }
 .KanbanTable td {
     background-color: #f9fcfe; border-bottom-left-radius: 15px;  border-bottom-right-radius: 15px; }
 .KanbanTable table {
     width: 100%;   border: none;  border: none;}
+
+
+    @media (max-width: 768px) {
+        .KanbanTable {
+          overflow-x: scroll;  /* Enable scrolling when on smaller screens */
+        }
+      
+        table {
+          min-width: 600px;  /* Ensure the table width is enough to trigger scrolling */
+        }
+      }
